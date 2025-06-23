@@ -74,20 +74,11 @@ x = Dense(128, activation='relu')(x)
 outputs = Dense(len(train_data.class_indices), activation='softmax')(x)
 model = Model(inputs, outputs)
 
-
-
-
-
 # Compile the model
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
-
-
-
 # Define callbacks
 early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
 reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=3, min_lr=1e-6)
-
-
 # [CHANGE POINT 5: Train the Model with Class Weights]
 history = model.fit(
     train_data,
@@ -96,8 +87,6 @@ history = model.fit(
     class_weight=class_weights_dict,
     callbacks=[early_stopping, reduce_lr]
 )
-
-
 plt.figure(figsize=(12, 4))
 plt.subplot(1, 2, 1)
 plt.plot(history.history['accuracy'], label='Train Accuracy')
@@ -150,11 +139,6 @@ model = load_model('/content/drive/MyDrive/SmartSortingApp/models/fruit_classifi
 with open('/content/drive/MyDrive/SmartSortingApp/models/class_indices.json', 'r') as f:
     class_indices = json.load(f)
 index_to_class = {v: k for k, v in class_indices.items()}
-
-
-
-
-
 
 uploaded = files.upload()
 img_path = list(uploaded.keys())[0]
