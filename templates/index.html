@@ -1,1 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Fruit Classifier</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            min-height: 100vh;
+            display: block;
+        }
 
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            margin: 0 auto 2rem;
+        }
+
+        input[type="file"] {
+            margin-bottom: 1rem;
+        }
+
+        button {
+            background-color: #27ae60;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #219150;
+        }
+
+        img {
+            margin-top: 1rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #34495e;
+        }
+
+        .footer a {
+            color: #2980b9;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            width: 250px;
+            background-color: hsl(184, 82%, 93%);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            height: 80vh;
+            overflow-y: auto;
+        }
+
+        nav h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 15px 0;
+            font-size: 14px;
+            color: #444;
+        }
+
+        nav ul li a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 300px;
+            padding: 20px;
+        }
+
+        #result {
+            margin-left: 300px;
+        }
+
+        .team-info {
+            margin-left: 320px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .team-info h3 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .team-info p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Project Information</h2>
+        <ul>
+            <li><strong>Project Name:</strong> Smart Sorting - Fruit & Vegetable Freshness Detector</li>
+            <li><strong>Description:</strong> This project uses machine learning to classify fruits and vegetables as fresh or rotten, aiding in quality control for agricultural and retail purposes.</li>
+            <li><strong>Technology:</strong> TensorFlow, Flask, HTML/CSS</li>
+            <li><strong>Objective:</strong> To develop an efficient tool for identifying fresh produce.</li>
+        </ul>
+        <h2>Team Mates</h2>
+        <ul>
+            <li><a href="#vamsi">Vamsi Govathoti</a></li>
+            <li><a href="#hemanth">Hemanth Kagitha</a></li>
+            <li><a href="#hari">Gowra Hari Prasad</a></li>
+            <li><a href="#gowtham">Goriparthi Gowtham Kumar</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>🍎 Smart Sorting - Fruit & Vegetable Freshness Detector 🍌</h1>
+        <p><ul>upload any one of the following (fresh or rotten):<br>
+            <li>Apples(chopped)</li>
+            <li>Banana</li>
+            <li>Capsicum</li>
+            <li>Cucumber</li>
+            <li>Okra(lady finger)</li>
+            <li>Oranges</li>
+            <li>Potato</li>
+            <li>Tomato</li>
+        </ul></p>
+        <form method="POST" enctype="multipart/form-data" id="uploadForm">
+            <input type="file" name="file" required>
+            <button type="submit">Upload & Predict</button>
+        </form>
+
+        <div id="result">
+            <h2>Prediction: <span id="predictedClass"></span></h2>
+            <p>Confidence: <span id="confidence"></span>%</p>
+            <img id="uploadedImage" style="display:none;" width="300">
+        </div>
+    </div>
+
+    <section class="team-info">
+        <div id="vamsi">
+            <h3>Vamsi Govathoti</h3>
+            <p><strong>College:</strong> B.Tech Final Year, ECE, SRGEC</p>
+            <p><strong>Location:</strong> Andhra Pradesh, India</p>
+            <p><strong>Project Contribution:</strong> Led the development of the machine learning model using TensorFlow and integrated it with a Flask web app.</p>
+            <p><strong>Skills:</strong> Python, TensorFlow, Flask, HTML/CSS</p>
+            <p><strong>Email:</strong> <a href="mailto:vamsigovathoti8125@gmail.com">vamsigovathoti8125@gmail.com</a></p>
+            <p>Linkedin: <a href="https://www.linkedin.com/in/vamsi-govathoti-a78068299	" target="_blank"><strong>Vamsi Govathoti</strong></a></p>
+            <p><strong>Hobbies:</strong> Interested in AI ,Watching Anime</p>
+            <p><strong>Future Goals:</strong> Aiming to specialize in AI and web development</p>
+        </div>
+        <div id="hemanth">
+            <h3>Hemanth Kagitha</h3>
+            <p><strong>Role:</strong>  Team lead ,Data Collector & Tester</p>
+            <p><strong>College:</strong> B.Tech Final Year, ECE, SRGEC</p>
+            <p><strong>Location:</strong> Andhra Pradesh, India</p>
+            <p><strong>Project Contribution:</strong> Collected and labeled the dataset for training the model.</p>
+            <p><strong>Skills:</strong> Data Collection, Image Processing, Testing</p>
+            <p><strong>Email:</strong> <a href="mailto:kagithahemanth081@gmail.com">kagithahemanth081@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/hemanth-kagitha-9a0615333" target="_blank">hemanth-kagitha</a></p>
+            <p><strong>Hobbies:</strong> Playing cricket</p>
+            <p><strong>Future Goals:</strong>Pursuing a career in data science</p>
+        </div>
+        <div id="hari">
+            <h3>Gowra Hari Prasad</h3>
+            <p><strong>Role:</strong> UI/UX Designer</p>
+            <p><strong>College:</strong> B.Tech Final Year, ECE, SRGEC</p>
+            <p><strong>Location:</strong> Andhra Pradesh, India</p>
+            <p><strong>Project Contribution:</strong> Designed the web interface with HTML/CSS for an intuitive user experience.</p>
+            <p><strong>Skills:</strong> HTML, CSS, JavaScript</p>
+            <p><strong>Email:</strong> <a href="mailto:hariprasad5210601@gmail.com">hariprasad5210601@gmail.com</a></p>
+            <p>Linkedin: <a href="https://www.linkedin.com/in/gowrahariprasad	" target="_blank"><strong>Hari Prasad</strong></a></p>
+            
+            <p><strong>Hobbies:</strong> Painting</p>
+            <p><strong>Future Goals:</strong>Specializing in web development</p>
+        </div>
+        <div id="gowtham">
+            <h3>Goriparthi Gowtham Kumar</h3>
+            <p><strong>Role:</strong> Documentation & Support</p>
+            <p><strong>College:</strong> B.Tech 3rd Year, ECE, SRGEC</p>
+            <p><strong>Location:</strong> Andhra Pradesh, India</p>
+            <p><strong>Project Contribution:</strong> Documented the project and provided technical support.</p>
+            <p><strong>Skills:</strong> Technical Writing, Troubleshooting</p>
+            <p><strong>Email:</strong> <a href="mailto:gowthamkumar19537@gmail.com">gowthamkumar19537@gmail.com</a></p>
+            <p>Linkedin: <a href="https://www.linkedin.com/in/gowtham-kumar-95b597370	" target="_blank"><strong>Goriparthi Gowtham Kumar</strong></a></p>
+            <p><strong>Hobbies:</strong> Gaming,Reading Books</p>
+            <p><strong>Future Goals:</strong>Working in tech support</p>
+        </div>
+    </section>
+
+    <div class="footer">
+        <p>Created by <strong>Govathoti Vamsi</strong></p>
+        <p>Email: <a href="mailto:vamsigovathoti8125@gmail.com">vamsigovathoti8125@gmail.com</a></p>
+        <p>Linkedin: <a href="https://www.linkedin.com/in/vamsi-govathoti-a78068299	" target="_blank"><strong>Vamsi Govathoti</strong></a></p>
+    </div>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        const resultDiv = document.getElementById('result');
+        const predictedClassSpan = document.getElementById('predictedClass');
+        const confidenceSpan = document.getElementById('confidence');
+        const uploadedImage = document.getElementById('uploadedImage');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementsByName('file')[0];
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                console.log('Response:', data);
+
+                if (data.error) {
+                    resultDiv.innerHTML = `<p style="color:red">${data.error}</p>`;
+                } else {
+                    predictedClassSpan.textContent = data.predicted_class;
+                    confidenceSpan.textContent = (data.confidence * 100).toFixed(2);
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        uploadedImage.src = e.target.result;
+                        uploadedImage.style.display = 'block';
+                    };
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                resultDiv.innerHTML = `<p style="color:red">An error occurred: ${error.message}</p>`;
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
