@@ -100,6 +100,17 @@ Used Transfer Learning and custom CNN experiments
 
 ---
 
+📄 Context
+
+Food industries lose significant revenue due to improper classification of spoiled produce. This project solves the problem by:
+
+Automating classification through image input.
+
+Assisting in smart packaging and quality control.
+
+Supporting farmers and vendors by detecting rotten produce before sale
+
+
 📂 Project Structure
 SmartSortingApp/
 │
@@ -120,17 +131,3 @@ SmartSortingApp/
 │
 ├── README.md
 └── requirements.txt
-
-
----
-
-📄 Context
-
-Food industries lose significant revenue due to improper classification of spoiled produce. This project solves the problem by:
-
-Automating classification through image input.
-
-Assisting in smart packaging and quality control.
-
-Supporting farmers and vendors by detecting rotten produce before sale
-
