@@ -82,10 +82,6 @@ HTML + CSS
 
 Google Colab
 
-Heroku (for deployment)
-
-
-
 ---
 
 🧪 Model Performance
