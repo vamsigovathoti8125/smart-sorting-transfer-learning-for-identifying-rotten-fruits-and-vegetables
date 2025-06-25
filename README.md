@@ -174,6 +174,7 @@ Assisting in smart packaging and quality control.
 Supporting farmers and vendors by detecting rotten produce before sale
 
 
+-----
 📂 Project Structure
 SmartSortingApp/
 │
