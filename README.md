@@ -2,24 +2,105 @@ smart-sorting-transfer-learning-for-identifying-rotten-fruits-and-vegetables
 
 ---
 
-📘 Smart-Sorting – Fruit and Vegetable Freshness Detection 
+
+🍎 Smart Sorting: Rotten vs Fresh Fruit & Vegetable Classification Using Transfer Learning
+
+Smart Sorting is a deep learning-powered web application designed to classify microscopic images of fruits and vegetables into fresh or rotten categories across 16 classes:
+
+🍎 Fresh Apple, Fresh Banana, Fresh Tomato...
+
+🥀 Rotten Apple, Rotten Banana, Rotten Tomato...
+
+
+This intelligent food sorting tool leverages Transfer Learning with MobileNetV2 to deliver accurate, real-time predictions through a modern Flask-based web interface.
 
 
 ---
 
-🔬 Smart Sorting is a deep learning-based solution to classify fruits and vegetables as fresh or rotten using image recognition. It is designed to help automate sorting processes in the agricultural and food industries.
+🚀 How It Works
+
+1. 📤 Upload an image of a fruit or vegetable.
+
+
+2. 🤖 Model processes the image using deep learning.
+
+
+3. 🧾 Prediction is displayed along with a preview of the uploaded image.
 
 
 
-🧠 Objective
+This makes Smart Sorting ideal for food sorting systems, supply chains, quality control in agriculture, and academic research.
 
-In this project, the aim is to:
 
-Identify whether a fruit/vegetable is fresh or rotten.
+---
 
-Categorize input images into one of 26 classes using a trained CNN model.
+✅ Features
 
-Provide a web interface where users can upload an image and get the predicted class with confidence.
+✅ Real-time classification of 16 fruit/vegetable classes
+
+✅ Preprocessing pipeline using OpenCV
+
+✅ Lightweight MobileNetV2 model for fast inference
+
+✅ Modern UI with intuitive feedback
+
+✅ Base64 image preview for smooth rendering
+
+
+
+---
+
+🛠 Tech Stack
+
+Layer	Technologies Used
+
+Model	TensorFlow / Keras with MobileNetV2
+Backend	Python, Flask
+Image Preprocessing	OpenCV
+Frontend	HTML5, CSS3 (Modern, clean UI)
+
+---
+
+🧪 Run Locally
+
+You can run this project on your local system by following these simple steps:
+
+1️⃣ Clone the Repository
+
+git clone https://github.com/yourusername/SmartSortingApp.git
+cd SmartSortingApp
+
+2️⃣ Create a Virtual Environment (Recommended)
+
+python -m venv venv
+venv\Scripts\activate         # On Windows
+# source venv/bin/activate   # On macOS/Linux
+
+3️⃣ Install the Required Packages
+
+pip install -r requirements.txt
+
+4️⃣ Start the Flask App
+
+python app.py
+
+Then, open your browser and visit:
+👉 http://127.0.0.1:5000
+
+
+---
+
+Would you like me to:
+
+1. Package this into a downloadable README.md file?
+
+
+2. Match it with a custom PowerPoint presentation with the same theme?
+
+
+
+Let me know, and I’ll do both!
+
 
 
 
@@ -113,17 +194,13 @@ SmartSortingApp/
 ├── dataset/
 │   ├── train/
 │   └── test/
-│
 ├── model/
 │   └── fruit_classifier.h5
 │   └── class_indices.json
-│
 ├── app.py
 ├── templates/
-│   └── index.html
-│
+    └── index.html
 ├── static/
 │   └── style.css
-│
 ├── README.md
 └── requirements.txt
