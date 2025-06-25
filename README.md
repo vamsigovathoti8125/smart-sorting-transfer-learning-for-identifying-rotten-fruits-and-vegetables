@@ -190,3 +190,4 @@ SmartSortingApp/
 │   └── style.css
 ├── README.md
 └── requirements.txt
+----
