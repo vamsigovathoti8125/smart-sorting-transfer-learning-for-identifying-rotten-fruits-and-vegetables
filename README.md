@@ -90,20 +90,6 @@ Then, open your browser and visit:
 
 ---
 
-Would you like me to:
-
-1. Package this into a downloadable README.md file?
-
-
-2. Match it with a custom PowerPoint presentation with the same theme?
-
-
-
-Let me know, and I’ll do both!
-
-
-
-
 
 🗂 Stages of the Project
 
