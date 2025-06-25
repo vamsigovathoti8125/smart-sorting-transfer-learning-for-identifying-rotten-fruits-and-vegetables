@@ -101,7 +101,6 @@ Used Transfer Learning and custom CNN experiments
 ---
 
 📂 Project Structure
-
 SmartSortingApp/
 │
 ├── dataset/
