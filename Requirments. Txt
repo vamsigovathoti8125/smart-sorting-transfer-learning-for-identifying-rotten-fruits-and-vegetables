@@ -1,0 +1,16 @@
+# Core ML and DL Libraries
+tensorflow==2.15.0
+numpy
+matplotlib
+scikit-learn
+
+# Image Handling
+opencv-python
+Pillow
+
+# Flask Web App
+flask
+flask-ngrok
+
+# For handling JSON class indices
+json5
