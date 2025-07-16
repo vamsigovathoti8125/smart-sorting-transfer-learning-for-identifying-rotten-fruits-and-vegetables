@@ -173,22 +173,4 @@ Assisting in smart packaging and quality control.
 
 Supporting farmers and vendors by detecting rotten produce before sale
 
-
------
-📂 Project Structure
-SmartSortingApp/
-│
-├── dataset/
-│   ├── train/
-│   └── test/
-├── model/
-│   └── fruit_classifier.h5
-│   └── class_indices.json
-├── app.py
-├── templates/
-    └── index.html
-├── static/
-│   └── style.css
-├── README.md
-└── requirements.txt
-----
+....
